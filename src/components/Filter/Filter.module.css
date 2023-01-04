@@ -1,0 +1,15 @@
+.filter__label {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.filter__input {
+  padding-left: 10px;
+  margin-top: 5px;
+  outline: none;
+  line-height: 1.5;
+  font-weight: 500; 
+  width: 200px; 
+}

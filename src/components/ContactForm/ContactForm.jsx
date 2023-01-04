@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-import css from './ContactForm.module.css';
+import { Component } from 'react';
 import shortid from 'shortid';
+import css from './ContactForm.module.css';
 
 export class ContactForm extends Component {
     state = {

@@ -1,7 +1,8 @@
 import { Component } from "react";
-import { ContactList } from './ContactList/ContactList';
 import { ContactForm } from './ContactForm/ContactForm';
+import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
+import css from '../components/App.module.css';
 
 export class App extends Component {
   state = {
@@ -11,7 +12,9 @@ export class App extends Component {
 
   onAddingContact = newContact => {
     const contacts = this.state.contacts;
-    contacts.find(contact => contact.name === newContact.name) ? alert(`${newContact.name} is already in contacts`) : this.setState(prevState => ({
+    contacts.find(contact => contact.name === newContact.name)
+      ? alert(`${newContact.name} is already in contacts`)
+      : this.setState(prevState => ({
       contacts: [...prevState.contacts, newContact],
     }));
   };
@@ -33,20 +36,19 @@ export class App extends Component {
 
     return (
       <div>
-        <h1>Phonebook</h1>
+        <h1 className={css.title}>Phonebook</h1>
         <ContactForm
-          onAddingContact={onAddingContact}
+          onAddingContacts={onAddingContact}
           contacts={contacts} 
           />
-
-        <h2>Contacts</h2>
+        <h2 className={css.subtitle}>Contacts</h2>
         <Filter
           onFilterHandler={onFilterHandler}
           filteredContent={filter}
           />
         <ContactList
           contacts={contacts}
-          onDeleteHandler={onDeleteHandler}
+          handleDelete={onDeleteHandler}
           filteredContent={filter}
         />
       </div>

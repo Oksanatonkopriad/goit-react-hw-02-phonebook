@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import css from './ContactList.module.css';
 
-export const ContactList = ({ contact, filteredContent, handleDelete }) => {
-    const filteredContacts = contact.filter(({ name }) =>
+export const ContactList = ({ contacts, filteredContent, handleDelete }) => {
+    const filteredContacts = contacts.filter(({ name }) =>
         name.toLowerCase().includes(filteredContent.toLowerCase()));
     
     return (
@@ -28,7 +28,7 @@ export const ContactList = ({ contact, filteredContent, handleDelete }) => {
 };
 
 ContactList.propTypes = {
-    ContactList: PropTypes.array.isRequired,
+    contacts: PropTypes.array.isRequired,
     filteredContent: PropTypes.string.isRequired,
     handleDelete: PropTypes.func.isRequired,
 };

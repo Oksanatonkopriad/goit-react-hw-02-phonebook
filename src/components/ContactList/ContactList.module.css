@@ -1,0 +1,20 @@
+.contacts__list {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  width: 300px;
+  margin-left: 10px;
+  
+}
+
+.contacts__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;  
+  margin-bottom: 10px;
+}
+
+.contacts__name {
+    margin-right: auto;
+}
